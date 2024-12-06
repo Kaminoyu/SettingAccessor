@@ -37,7 +37,7 @@ class Test {
 	Setting(int, interger, Test, 
 		{ // Function Get
 			std::cout << "Get value" << std::endl; 
-			return obj->interger.data; 
+			return obj->interger.data;  // You should only return values ​​using direct access
 		},
 		{ // Function Set
 			std::cout << "New value " + std::to_string(new_value) << std::endl;
