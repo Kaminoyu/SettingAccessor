@@ -16,7 +16,7 @@ namespace Stelo {
             return data;
         }
         T& operator->() {
-            return data;
+            return FuncGet ? FuncGet(class_ptr) : data;
         }
         T& get() {
             return FuncGet ? FuncGet(class_ptr) : data;
@@ -24,15 +24,19 @@ namespace Stelo {
 
         // setter oprate
         void set(const T& new_value) {
-            data = new_value;
             if (FuncSet) {
                 FuncSet(class_ptr, new_value);
             }
+            else {
+                data = new_value;
+            }
         }
         T& operator=(const T& new_value) {
-            data = new_value;
             if (FuncSet) {
                 FuncSet(class_ptr, new_value);
+            }
+            else {
+                data = new_value;
             }
             return data;
         }
@@ -57,7 +61,7 @@ namespace Stelo {
 #define Setting(T, name_variable, CLASS, func_get, func_set, initial_value) \
 private: \
     static T get_##name_variable(CLASS* obj) func_get \
-    static void set_##name_variable(CLASS* obj, const T& value) func_set \
+    static void set_##name_variable(CLASS* obj, const T& new_value) func_set \
 public: \
     Stelo::SettingAccessor< \
         T, CLASS, &CLASS::get_##name_variable, &CLASS::set_##name_variable \
