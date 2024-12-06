@@ -42,7 +42,7 @@ class Test {
 		{ // Function Set
 			std::cout << "New value " + std::to_string(new_value) << std::endl;
 			std::cout << "Current value " + std::to_string(obj->interger()) << std::endl;
-			obj->interger() = new_value;
+			obj->interger.data = new_value;
 			std::cout << "Current value " + std::to_string(obj->interger()) << std::endl;
 		}, 
 		0);
