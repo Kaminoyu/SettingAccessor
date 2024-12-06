@@ -13,7 +13,7 @@ namespace Stelo {
 
         // getter oprate
         T& operator()() {
-            return data;
+            return FuncGet ? FuncGet(class_ptr) : data;
         }
         T& operator->() {
             return FuncGet ? FuncGet(class_ptr) : data;
