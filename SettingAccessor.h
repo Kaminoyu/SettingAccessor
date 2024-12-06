@@ -1,7 +1,7 @@
 #pragma once
 
 namespace Stelo {
-    template<typename T, typename CLASS, T(*FuncGet)(CLASS* obj),
+    template<typename T, typename CLASS, T&(*FuncGet)(CLASS* obj),
         void (*FuncSet)(CLASS* obj, const T& new_value)>
     class SettingAccessor {
     public:
@@ -60,7 +60,7 @@ namespace Stelo {
 
 #define Setting(T, name_variable, CLASS, func_get, func_set, initial_value) \
 private: \
-    static T get_##name_variable(CLASS* obj) func_get \
+    static T& get_##name_variable(CLASS* obj) func_get \
     static void set_##name_variable(CLASS* obj, const T& new_value) func_set \
 public: \
     Stelo::SettingAccessor< \
