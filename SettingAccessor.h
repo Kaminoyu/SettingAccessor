@@ -5,8 +5,8 @@ namespace Stelo {
         void (*FuncSet)(CLASS* obj, const T& value)>
     class SettingAccessor {
     public:
-        T data; 
         CLASS* class_ptr;
+        T data; 
 
         SettingAccessor(CLASS* obj, const T& intial) : 
             class_ptr(obj), data(intial) {}
