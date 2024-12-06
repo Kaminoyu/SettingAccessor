@@ -1,3 +1,5 @@
+#pragma once
+
 namespace Stelo {
     template<typename T, typename CLASS, T(*FuncGet)(CLASS* obj),
         void (*FuncSet)(CLASS* obj, const T& value)>
