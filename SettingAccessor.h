@@ -2,7 +2,7 @@
 
 namespace Stelo {
     template<typename T, typename CLASS, T(*FuncGet)(CLASS* obj),
-        void (*FuncSet)(CLASS* obj, const T& value)>
+        void (*FuncSet)(CLASS* obj, const T& new_value)>
     class SettingAccessor {
     public:
         CLASS* class_ptr;
