@@ -31,38 +31,22 @@ The `Setting` macro simplifies the declaration of a property with minimal syntax
 #include <iostream>
 #include "SettingAccessor.h" // file header
 
-enum class PropertyUI {
-    BACKGROUND
-};
+using namespace Stelo;
 
-class Window {
-    Setting(float, transparency, Window, 
-        { return obj->transparency_value; }, 
-        { obj->Update(PropertyUI::BACKGROUND); },
-        1.0f);
-
-public:
-    float transparency_value = 1.0f;
-
-    void Update(PropertyUI property_ui) {
-        if (property_ui == PropertyUI::BACKGROUND) {
-            std::cout << "Transparency updated to: " << transparency() << "\n";
-        }
-    }
+class Test {
+	Setting(int, interger, Test, 
+		{ 
+			return obj->interger.data; 
+		},
+		{ 
+			std::cout << "The new value " + std::to_string(obj->interger()) << std::endl;
+		}, 
+		0);
 };
 
 int main() {
-    Window window;
-
-    // get property
-    std::cout << "Initial Transparency: " << window.transparency() << "\n";
-
-    // set property
-    window.transparency = 0.5f;
-
-    // oprate +
-    window.transparency = window.transparency + 0.3f;
-
-    return 0;
+	Test test;
+	test.interger = 10;
+	return 0;
 }
 ```
