@@ -13,8 +13,8 @@
 
 ### 1. Include the Header File
 
-Place the `Stelo_SettingAccessor.h` file in your project and include it in your source files:
+Place the `SettingAccessor.h` file in your project and include it in your source files:
 
 ```cpp
-#include "Stelo_SettingAccessor.h"
+#include "SettingAccessor.h"
 ```
