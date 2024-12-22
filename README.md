@@ -26,10 +26,10 @@ Use the provided macros to define properties within your class.
 class MyClass {
     Setting(int, my_value, MyClass,
         {
-            return ref->data; // Getter logic
+            return ref->my_value.data; // Getter logic
         },
         {
-            ref->data = value; // Setter logic
+            ref->my_value.data = value; // Setter logic
         },
         0 // Initial value
     );
@@ -41,7 +41,7 @@ class MyClass {
 class MyClass {
     SettingGetterDefault(int, my_value, MyClass,
         {
-            ref->data = value; // Setter logic
+            ref->my_value.data = value; // Setter logic
         },
         0 // Initial value
     );
@@ -53,7 +53,7 @@ class MyClass {
 class MyClass {
     SettingSetterDefault(int, my_value, MyClass,
         {
-            return ref->data; // Getter logic
+            return ref->my_value.data; // Getter logic
         },
         0 // Initial value
     );
