@@ -18,3 +18,6 @@ Place the `SettingAccessor.h` file in your project and include it in your source
 ```cpp
 #include "SettingAccessor.h"
 ```
+### 2. Define a Property
+Use the provided macros to define properties within your class.
+
