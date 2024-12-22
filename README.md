@@ -91,10 +91,10 @@ You can customize how values are retrieved and assigned. For example:
 ``` cpp
 Setting(std::string, name, MyClass,
     {
-        return ref->stored_name + " (accessed)";
+        return ref->name.data + " (accessed)";
     },
     {
-        ref->stored_name = value + " (modified)";
+        ref->name.data = value + " (modified)";
     },
     "Default"
 );
