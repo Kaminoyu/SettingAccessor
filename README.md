@@ -78,3 +78,11 @@ Arithmetic Operations
 obj.my_value += 5;  // Increment value by 5
 obj.my_value *= 2;  // Multiply value by 2
 ```
+### Integration in Larger Projects
+To use `SettingAccessor` as a header-only library:
+
+Copy `SettingAccessor.h` to your project.
+Include the file wherever needed:
+```cpp
+#include "SettingAccessor.hpp"
+```
