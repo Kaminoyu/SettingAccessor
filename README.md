@@ -116,4 +116,4 @@ You can add debugging or logging logic directly within the getter and setter.
   -> No, thread safety must be implemented separately if required.
 
 ### License
-This library is open-sourced under the MIT License. See the LICENSE file for more details.
+This library is open-sourced under the GNU General Public License v3.0. See the LICENSE file for more details.
