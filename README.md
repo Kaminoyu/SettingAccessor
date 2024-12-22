@@ -79,10 +79,38 @@ obj.my_value += 5;  // Increment value by 5
 obj.my_value *= 2;  // Multiply value by 2
 ```
 ### Integration in Larger Projects
-To use `SettingAccessor` as a header-only library:
-
-Copy `SettingAccessor.h` to your project.
+- To use `SettingAccessor` as a header-only library:
+- Copy `SettingAccessor.h` to your project.
 Include the file wherever needed:
 ```cpp
 #include "SettingAccessor.hpp"
 ```
+### Advanced Topics
+Custom Getter and Setter Logic
+You can customize how values are retrieved and assigned. For example:
+``` cpp
+Setting(std::string, name, MyClass,
+    {
+        return ref->stored_name + " (accessed)";
+    },
+    {
+        ref->stored_name = value + " (modified)";
+    },
+    "Default"
+);
+```
+### Debugging
+You can add debugging or logging logic directly within the getter and setter.
+
+### FAQ
+- **Q: Can I use this with primitive types?**
+  
+  -> Yes, SettingAccessor works with any type, including primitives and user-defined classes.
+
+- **Q: What happens if I don’t define a getter or setter?**
+  
+  -> You can use the SettingGetterDefault or SettingSetterDefault macros to define properties with default behaviors.
+
+- **Q: Is this thread-safe?**
+  
+  -> No, thread safety must be implemented separately if required.
