@@ -118,6 +118,6 @@ private: \
     static T& get_##name_variable(CLASS* ref) getter \
 public: \
     Stelo::SettingAccessor< \
-        T, CLASS, &CLASS::get_##name_variable, nullptr_t \
+        T, CLASS, &CLASS::get_##name_variable, nullptr \
     > name_variable{ this, initial_value }
 #endif // SETTING_ACCESSOR_HPP
