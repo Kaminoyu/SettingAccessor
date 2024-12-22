@@ -100,17 +100,17 @@ public:
 #define Setting(T, name_variable, CLASS, getter, setter, initial_value) \
 private: \
     static T& get_##name_variable(CLASS* ref) getter \
-    static void set_##name_variable(CLASS* ref, const T& value) setter\
+    static void set_##name_variable(CLASS* ref, const T& value) setter \
 public: \
     Stelo::SettingAccessor< \
-        T, CLASS, &CLASS::get_##name_variable, &CLASS::set_##name_variable\
+        T, CLASS, &CLASS::get_##name_variable, &CLASS::set_##name_variable \
     > name_variable{ this, initial_value }
 
 #define SettingGetterDefault(T, name_variable, CLASS, setter, initial_value) \
 private: \
     static void set_##name_variable(CLASS* ref, const T& value) setter \
 public: \
-    Stelo::SettingAccessor<T, CLASS, nullptr, &CLASS::set_##name_variable\
+    Stelo::SettingAccessor<T, CLASS, nullptr, &CLASS::set_##name_variable \
     > name_variable{ this, initial_value }
 
 #define SettingSetterDefault(T, name_variable, CLASS, getter, initial_value) \
@@ -118,6 +118,6 @@ private: \
     static T& get_##name_variable(CLASS* ref) getter \
 public: \
     Stelo::SettingAccessor< \
-        T, CLASS, &CLASS::get_##name_variable, nullptr_t\
+        T, CLASS, &CLASS::get_##name_variable, nullptr_t \
     > name_variable{ this, initial_value }
 #endif // SETTING_ACCESSOR_HPP
