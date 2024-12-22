@@ -1,7 +1,6 @@
-# SettingAccessor Template & Macro Setting
+# Stelo::SettingAccessor - Flexible Property Management in C++
 
-`SettingAccessor` is a flexible C++ template designed to manage class properties efficiently. By using custom `getter` and `setter` functions, it provides fine-grained control over how data is accessed and modified. The `Setting` macro simplifies property declaration, reducing boilerplate code.
-
+`SettingAccessor` is a template-based utility designed to provide a clean and efficient interface for managing class properties with flexible getter and setter mechanisms. It enables intuitive property access while encapsulating logic for data retrieval and assignment.
 ---
 
 ## Features
