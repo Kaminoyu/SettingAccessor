@@ -83,7 +83,7 @@ obj.my_value *= 2;  // Multiply value by 2
 - Copy `SettingAccessor.h` to your project.
 Include the file wherever needed:
 ```cpp
-#include "SettingAccessor.hpp"
+#include "SettingAccessor.h"
 ```
 ### Advanced Topics
 Custom Getter and Setter Logic
