@@ -1,4 +1,3 @@
-``` cpp
 #pragma once
 #ifndef SETTING_ACCESSOR_H
 #define SETTING_ACCESSOR_H
@@ -124,4 +123,3 @@ public: \
     > name_variable{ this, initial_value }
 }
 #endif // SETTING_ACCESSOR_HPP
-```
